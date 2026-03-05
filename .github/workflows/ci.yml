@@ -1,0 +1,21 @@
+name: CI Pipeline - Playlist App
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Récupérer le code
+        uses: action/checkout@v3
+      
+      - name: 🐳 Builder l'image Docker
+        uses: docker build -t playlist-app .
+
+      - name: 🚀 Lancer les tests
+        run: docker run --rm playlist-app

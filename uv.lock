@@ -1,0 +1,24 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[[package]]
+name = "playlist-app"
+version = "0.1.0"
+source = { virtual = "." }
+
+[package.dev-dependencies]
+dev = [
+    { name = "pyttest" },
+]
+
+[package.metadata]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pyttest", specifier = ">=0.1" }]
+
+[[package]]
+name = "pyttest"
+version = "0.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ae/e9/2ca1437d1234cde2410fd0deb08f9ef8d694a38b44e118b875d04054370b/pyttest-0.1.tar.gz", hash = "sha256:916eab41ac72918ef64388d34f14693195a95c60a075359f9741cb0bff7ed27b", size = 767, upload-time = "2018-01-19T02:02:39.106Z" }
