@@ -20,8 +20,10 @@ jobs:
       - name: Lancer les tests
         run: docker run --rm ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
       - name: verifier le secret
+        env:
+          APP_SECRET_TOKEN: super-secret-123
         run: |
-         if [ -z "${{secrets.APP_SECRET_TOKEN }}"]; then
+         if [ -z "${{ env.APP_SECRET_TOKEN }}"]; then
            echo "Secret manquant !"
            exit 1
          else
