@@ -21,9 +21,9 @@ jobs:
         run: docker run --rm ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
       - name: verifier le secret
         env:
-          APP_SECRET_TOKEN: super-secret-123
+          TOKEN: ${{secrets.APP_SCRET_TOKEN }}
         run: |
-         if [ -z "${{ env.APP_SECRET_TOKEN }}"]; then
+         if [ -z "${{ env.TOKEN }}"]; then
            echo "Secret manquant !"
            exit 1
          else
