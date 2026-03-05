@@ -23,7 +23,7 @@ jobs:
         env:
           TOKEN: ${{secrets.APP_SECRET_TOKEN }}
         run: |
-         if [ -z "${$TOKEN}"]; then
+         if [ -z "${TOKEN}"]; then
            echo "Secret manquant !"
            exit 1
          else
